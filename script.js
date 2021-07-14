@@ -18,18 +18,13 @@ button.addEventListener("click", function () {
     // Isso se livra de todos os caracteres exceto letras comuns, espaços e apóstrofos. 
     // Iremos aprender mais sobre como usar a função replace numa lição mais à frente.
     const wordsCounts = {};
-    //console.log(typedText)
     typedTextSplit = typedText.split(' ')
-    console.log(typedTextSplit)
+    
     
     //contador de palavras
     for (let i = 0; i < typedText.length; i++) {
         currentWords = typedTextSplit[i]
-        //currentLetter = typedText[i];
-        // faça algo com cada letra 
-        //console.log(currentLetter)
-        
-        //console.log(wordsCounts[currentWords])
+        // faça algo com cada palavra
         // Ao encontrar uma palavra pela primeira vez, você irá definir a contagem dela como 1. Caso contrário, adicionará um à contagem.
         if (wordsCounts[currentWords] !== undefined) {
             wordsCounts[currentWords]++;
@@ -43,12 +38,11 @@ button.addEventListener("click", function () {
     for (let word in wordsCounts) {
         const span = document.createElement("span");
         if (word === 'undefined'){
-            console.log('aqui está o undefined')
         }
         if (word !== 'undefined'){
             const textContentW = `"${word}": ${wordsCounts[word]}, `;
             //console.log(wordsCounts[word]);
-            console.log(textContentW)
+
             span.innerText = textContentW;
             const words = document.getElementById("lettersDiv");
             words.appendChild(span);
@@ -59,8 +53,7 @@ button.addEventListener("click", function () {
     
 
     
-    
-    
+
     
     const letterCounts = {};
     
@@ -69,7 +62,7 @@ button.addEventListener("click", function () {
         currentLetter = typedText[i];
         // faça algo com cada letra 
         
-        console.log(letterCounts[currentLetter])
+        
         // Ao encontrar uma letra pela primeira vez, você irá definir a contagem dela como 1. Caso contrário, adicionará um à contagem.
         if (letterCounts[currentLetter] === undefined) {
             letterCounts[currentLetter] = 1;
@@ -77,8 +70,6 @@ button.addEventListener("click", function () {
             letterCounts[currentLetter]++;
         }
     }
-    console.log(letterCounts)
-
     
 
     for (let letter in letterCounts) {
@@ -90,7 +81,6 @@ button.addEventListener("click", function () {
     }
     // separar a string de entrada em palavras separando-a nos espaços
     words = typedText.split(/\s/);
-    console.log(words)
 
 
 });
